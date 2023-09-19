@@ -1,65 +1,64 @@
-# coda-language-support README
+# Coda Language Support
 
-This is the README for your extension "coda-language-support". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+![Coda Logo](https://repository-images.githubusercontent.com/631995861/fa5babb0-27af-4a4c-9c80-1fb93da6c7d3)
 
 ---
 
-## Working with Markdown
+## Resources
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+- [Documentation](https://github.com/SujalChoudhari/Coda/wiki)
+- [Issue Tracker](https://github.com/SujalChoudhari/Coda/issues)
+- [Repository](https://github.com/SujalChoudhari/Coda)
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
 
-## For more information
+Visit the wiki for more information: [Coda Wiki](https://github.com/SujalChoudhari/Coda/wiki)
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+---
 
-**Enjoy!**
+## Introduction
+
+**Coda Language Support** is a powerful extension that provides enhanced support for the Coda programming language in your code editor. Coda is a versatile and efficient C++-based interpreted language designed to simplify coding tasks and boost productivity. This extension helps you take full advantage of Coda's features and streamline your development process.
+
+---
+
+## Features
+
+### Interpreted Language
+
+Coda is an interpreted language, offering developers the flexibility to write, test, and execute code quickly. The Coda interpreter, built in C++, ensures not only rapid execution but also high performance and adaptability.
+
+### Utility-Focused
+
+Coda is centered around utility, making it a valuable language for simplifying a wide range of programming tasks. It comes with an extensive collection of built-in functions and libraries, empowering developers to tackle common challenges with ease. This emphasis on utility enhances productivity and streamlines development workflows.
+
+### Command List
+
+To explore the list of available commands and features supported by this extension, please refer to the [Coda Commands](https://github.com/SujalChoudhari/Coda/wiki/Command-List) section in the Coda Wiki.
+
+---
+
+## Getting Started
+
+To get started with Coda Language Support, follow these steps:
+
+1. Install the extension from the Visual Studio Code Marketplace.
+2. Configure your editor to recognize Coda files (`.coda` or other file extensions).
+3. Enjoy enhanced syntax highlighting and code suggestions tailored to Coda.
+
+Refer to the [Coda Wiki](https://github.com/SujalChoudhari/Coda/wiki) for detailed installation and configuration instructions.
+
+---
+
+## Contributing
+
+We welcome contributions to improve and expand the capabilities of Coda Language Support. If you have ideas, bug reports, or feature requests, please [submit an issue](https://github.com/SujalChoudhari/Coda/issues) on our GitHub repository.
+
+---
+
+## License
+
+This extension is open-source and available under the [MIT License](https://github.com/SujalChoudhari/Coda/blob/main/LICENSE). Feel free to use, modify, and distribute it according to the terms of the license.
+
+---
+
+Thank you for using Coda Language Support. Happy coding!
