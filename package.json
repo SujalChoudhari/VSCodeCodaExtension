@@ -2,6 +2,7 @@
   "name": "coda-language-support",
   "displayName": "Coda Language Support",
   "description": "Language support for Coda programming language",
+  "publisher": "SujalVivekChoudhari",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.82.0"
