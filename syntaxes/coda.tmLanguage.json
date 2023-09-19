@@ -1,0 +1,165 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Coda",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#imports"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#variables"
+        },
+        {
+            "include": "#functions"
+        },
+        {
+            "include": "#scopes"
+        },
+        {
+            "include": "#objects"
+        },
+        {
+            "include": "#lists"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.coda",
+                    "match": "//(.*?)(;|\\n)"
+                }
+            ]
+        },
+        "imports": {
+            "patterns": [
+                {
+                    "name": "keyword.control.import.coda",
+                    "match": "\\bimport\\b"
+                },
+                {
+                    "include": "#special-identifier"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "name": "entity.name.type.coda",
+                    "match": "\\b(int|bool|byte|float|list|object|double|string|long)\\b"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.reserved.coda",
+                    "match": "\\b(let|const|def|if|elif|else|for|while|break|return|scope|continue|typeof|sizeof|do|in|native)\\b"
+                },
+                {
+                    "name": "entity.name.function.coda",
+                    "match": "\\b(print|println|sleep|input|parseInt|parseFloat|parseDouble|parseByte|parseBool|quit|exit)\\b"
+                }
+            ]
+        },
+        "variables": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.integer.coda",
+                    "match": "\\b[0-9](?:[_iIfFdDlLbB0-9.])*\\b"
+                },
+                {
+                    "name": "constant.numeric.float.coda",
+                    "match": "\\b[0-9]+\\.[0-9](?:[_iIfFdDlLbB0-9.])*\\b"
+                },
+                {
+                    "include": "#strings"
+                },
+                {
+                    "include": "#operators"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.coda",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.coda",
+                            "match": "\\\\[\"\\\\nrt]"
+                        }
+                    ]
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.coda",
+                    "match": "[=+\\-*/%:=.<>!]"
+                }
+            ]
+        },
+        "functions": {
+            "begin": "\\bdef\\s+\\w+\\s*\\(",
+            "end": "\\)\\s*\\{",
+            "patterns": [
+                {
+                    "include": "#param-list"
+                }
+            ]
+        },
+        "scopes": {
+            "patterns": [
+                {
+                    "name": "keyword.control.scope.coda",
+                    "match": "\\bscope\\b"
+                },
+                {
+                    "include": "#variables"
+                },
+                {
+                    "include": "#functions"
+                }
+            ]
+        },
+        "objects": {
+            "patterns": [
+                {
+                    "name": "variable.other.object.coda",
+                    "match": "\\blet\\s+[a-zA-Z_][a-zA-Z0-9_]*\\s+=\\s+\\{"
+                },
+                {
+                    "include": "#functions"
+                }
+            ]
+        },
+        "lists": {
+            "patterns": [
+                {
+                    "name": "constant.language.list.coda",
+                    "match": "\\bconst\\s+[a-zA-Z_][a-zA-Z0-9_]*\\s+=\\s+\\[.*?\\];"
+                }
+            ]
+        },
+        "param-list": {
+            "name": "variable.parameter.coda",
+            "match": "\\b\\w+(?=\\s*(,|\\)))\\b"
+        }
+    },
+    "scopeName": "source.coda"
+}

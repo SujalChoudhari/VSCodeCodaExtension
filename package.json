@@ -1,0 +1,25 @@
+{
+  "name": "coda-language-support",
+  "displayName": "Coda Language Support",
+  "description": "Language support for Coda programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "coda",
+      "aliases": ["Coda", "coda"],
+      "extensions": [".coda"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "coda",
+      "scopeName": "source.coda",
+      "path": "./syntaxes/coda.tmLanguage.json"
+    }]
+  }
+}
