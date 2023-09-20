@@ -3,6 +3,7 @@
   "displayName": "Coda Language Support",
   "description": "Language support for Coda programming language",
   "publisher": "SujalVivekChoudhari",
+  "icon": "./images/extention-icon.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.82.0"
@@ -15,7 +16,11 @@
       "id": "coda",
       "aliases": ["Coda", "coda"],
       "extensions": [".coda"],
-      "configuration": "./language-configuration.json"
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "dark": "./images/file-icon.png",
+        "light": "./images/file-icon.png"
+      }
     }],
     "grammars": [{
       "language": "coda",
