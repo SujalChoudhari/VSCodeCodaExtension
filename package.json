@@ -4,7 +4,8 @@
   "description": "Language support for Coda programming language",
   "publisher": "SujalVivekChoudhari",
   "icon": "./images/extention-icon.png",
-  "version": "0.1.0",
+  "keywords": ["coda","coda language","language","extention","sujal","coda extention"],
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.82.0"
   },
