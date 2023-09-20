@@ -1,0 +1,163 @@
+{
+    "Import Statement": {
+        "prefix": "import",
+        "body": [
+            "import ${1:package};"
+        ],
+        "description": "Import a module"
+    },
+    "Variable Declaration": {
+        "prefix": "let",
+        "body": [
+            "let $1 = $2;"
+        ],
+        "description": "Declare an integer variable"
+    },
+    "Function Declaration": {
+        "prefix": "def",
+        "body": [
+            "def ${1:func}(${2:param}) {",
+            "\t${3://block;}",
+            "\treturn ${4:0};",
+            "}"
+        ],
+        "description": "Declare a function"
+    },
+    "Scope Declaration": {
+        "prefix": "scope",
+        "body": [
+            "scope ${1:${TM_FILENAME_BASE}} {",
+            "\t$2",
+            "}"
+        ],
+        "description": "Declare a scope"
+    },
+    "Object Declaration": {
+        "prefix": "object",
+        "body": [
+            "let object ${1:obj} = {",
+            "\t$2",
+            "};"
+        ],
+        "description": "Declare an object"
+    },
+    "List Declaration": {
+        "prefix": "list",
+        "body": [
+            "const list ${1:l1} = [$2];"
+        ],
+        "description": "Declare a list"
+    },
+    "Conditional Statement - If": {
+        "prefix": "if",
+        "body": [
+            "if (${1://condition;}) {",
+            "\t${2://block;}",
+            "}"
+        ],
+        "description": "Conditional if statement"
+    },
+    "Conditional Statement - Elif": {
+        "prefix": "elif",
+        "body": [
+            "\nelif (${1://condition;}) {",
+            "\t${2://block;}",
+            "}"
+        ],
+        "description": "Conditional if statement"
+    },
+    "Conditional Statement - Else": {
+        "prefix": "else",
+        "body": [
+            "\nelif {",
+            "\t${1://block;}",
+            "}"
+        ],
+        "description": "Conditional if statement"
+    },
+    "Loop - For": {
+        "prefix": "for",
+        "body": [
+            "for (${1:let i = 0};${2://condition;};${3:i++}) {",
+            "\t$4",
+            "}"
+        ],
+        "description": "For loop"
+    },
+    "Loop - While": {
+        "prefix": "while",
+        "body": [
+            "while (${1://condition;}) {",
+            "\t${2://block;}",
+            "}"
+        ],
+        "description": "While loop"
+    },
+    "Do-While Loop": {
+        "prefix": "dowhile",
+        "body": [
+            "do {",
+            "\t${1://block;}",
+            "} while (${2://condition;});"
+        ],
+        "description": "Do-While loop"
+    },
+    "Comment": {
+        "prefix": "comment",
+        "body": [
+            "// $1;",
+            "$2"
+        ],
+        "description": "Comment"
+    },
+    "Native Function - Print": {
+        "prefix": "print",
+        "body": [
+            "print($1);",
+            "$2"
+        ],
+        "description": "Print to console"
+    },
+    "Native Function - Print Line": {
+        "prefix": "println",
+        "body": [
+            "println($1);"
+        ],
+        "description": "Print to console with a newline"
+    },
+    "Native Function - Sleep": {
+        "prefix": "sleep",
+        "body": [
+            "sleep($1);"
+        ],
+        "description": "Pause execution for a specified time"
+    },
+    "Native Function - Input": {
+        "prefix": "input",
+        "body": [
+            "input($1);"
+        ],
+        "description": "Read input from the user"
+    },
+    "Native Function - Parse Integer": {
+        "prefix": "parseInt",
+        "body": [
+            "parseInt($1);"
+        ],
+        "description": "Parse a string to an integer"
+    },
+    "Native Function - Parse Float": {
+        "prefix": "parseFloat",
+        "body": [
+            "parseFloat($1);"
+        ],
+        "description": "Parse a string to a float"
+    },
+    "Native Function - Quit": {
+        "prefix": "quit",
+        "body": [
+            "quit(${1|0,1,2|});"
+        ],
+        "description": "Quit the program"
+    }
+}

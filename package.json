@@ -4,33 +4,56 @@
   "description": "Language support for Coda programming language",
   "publisher": "SujalVivekChoudhari",
   "icon": "./images/extention-icon.png",
-  "keywords": ["coda","coda language","language","extention","sujal","coda extention"],
-  "version": "0.2.0",
+  "keywords": [
+    "coda",
+    "coda language",
+    "language",
+    "extention",
+    "sujal",
+    "coda extention"
+  ],
+  "version": "0.3.0",
   "engines": {
     "vscode": "^1.82.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Snippets"
   ],
   "contributes": {
-    "languages": [{
-      "id": "coda",
-      "aliases": ["Coda", "coda"],
-      "extensions": [".coda"],
-      "configuration": "./language-configuration.json",
-      "icon": {
-        "dark": "./images/file-icon.png",
-        "light": "./images/file-icon.png"
+    "languages": [
+      {
+        "id": "coda",
+        "aliases": [
+          "Coda",
+          "coda"
+        ],
+        "extensions": [
+          ".coda"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "dark": "./images/file-icon.png",
+          "light": "./images/file-icon.png"
+        }
       }
-    }],
-    "grammars": [{
-      "language": "coda",
-      "scopeName": "source.coda",
-      "path": "./syntaxes/coda.tmLanguage.json"
-    }]
+    ],
+    "grammars": [
+      {
+        "language": "coda",
+        "scopeName": "source.coda",
+        "path": "./syntaxes/coda.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "coda",
+        "path": "./snippets/snippets.json"
+      }
+    ]
   },
   "repository": {
     "url": "https://github.com/SujalChoudhari/VSCodeCodaExtention",
-    "type":"github"
+    "type": "github"
   }
 }
