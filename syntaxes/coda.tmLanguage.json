@@ -1,93 +1,81 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
     "name": "Coda",
+    "scopeName": "source.coda",
     "patterns": [
         {
             "include": "#comments"
         },
         {
-            "include": "#imports"
+            "include": "#constants"
         },
         {
-            "include": "#types"
+            "include": "#members"
         },
         {
             "include": "#keywords"
         },
         {
+            "include": "#builtInFunctions"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
             "include": "#operators"
         },
         {
-            "include": "#variables"
+            "include": "#controlStatements"
         },
         {
-            "include": "#functions"
-        },
-        {
-            "include": "#scopes"
-        },
-        {
-            "include": "#objects"
-        },
-        {
-            "include": "#lists"
+            "include": "#scopesAndFunctions"
         }
     ],
     "repository": {
         "comments": {
             "patterns": [
                 {
-                    "name": "comment.line.coda",
-                    "match": "//(.*?)(;|\\n)"
+                    "name": "comment.line.double-slash.coda",
+                    "match": "//(.*?)(;|$)"
                 }
             ]
         },
-        "imports": {
+        "constants": {
             "patterns": [
                 {
-                    "name": "keyword.control.import.coda",
-                    "match": "\\bimport\\b"
-                },
-                {
-                    "include": "#special-identifier"
+                    "name": "constant.character.coda",
+                    "match": "\\b[A-Z_]+\\b"
                 }
             ]
         },
-        "types": {
+        "members": {
             "patterns": [
                 {
-                    "name": "entity.name.type.coda",
-                    "match": "\\b(int|bool|byte|float|list|object|double|string|long)\\b"
+                    "name": "entity.name.method",
+                    "match": "\\w+(\\.\\w+)+"
                 }
             ]
         },
         "keywords": {
             "patterns": [
                 {
-                    "name": "keyword.reserved.coda",
-                    "match": "\\b(let|const|def|if|elif|else|for|while|break|return|scope|continue|typeof|sizeof|do|in|native)\\b"
+                    "name": "keyword.control.coda",
+                    "match": "\\b(let|const|def|if|elif|import|else|for|while|break|return|scope|continue|typeof|sizeof|do|in|native)\\b"
                 },
                 {
-                    "name": "entity.name.function.coda",
-                    "match": "\\b(print|println|sleep|input|parseInt|parseFloat|parseDouble|parseByte|parseBool|quit|exit)\\b"
+                    "name": "storage.type.coda",
+                    "match": "\\b(int|bool|byte|float|list|object|double|string|long)\\b"
                 }
             ]
         },
-        "variables": {
+        "builtInFunctions": {
             "patterns": [
                 {
-                    "name": "constant.numeric.integer.coda",
-                    "match": "\\b[0-9](?:[_iIfFdDlLbB0-9.])*\\b"
-                },
-                {
-                    "name": "constant.numeric.float.coda",
-                    "match": "\\b[0-9]+\\.[0-9](?:[_iIfFdDlLbB0-9.])*\\b"
-                },
-                {
-                    "include": "#strings"
-                },
-                {
-                    "include": "#operators"
+                    "name": "support.function.builtin.coda",
+                    "match": "\\b(print|println|sleep|input|parseInt|parseFloat|parseDouble|parseByte|parseBool|quit|exit)\\b"
                 }
             ]
         },
@@ -96,13 +84,15 @@
                 {
                     "name": "string.quoted.double.coda",
                     "begin": "\"",
-                    "end": "\"",
-                    "patterns": [
-                        {
-                            "name": "constant.character.escape.coda",
-                            "match": "\\\\[\"\\\\nrt]"
-                        }
-                    ]
+                    "end": "\""
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.coda",
+                    "match": "\\b\\d+\\b"
                 }
             ]
         },
@@ -110,56 +100,42 @@
             "patterns": [
                 {
                     "name": "keyword.operator.coda",
-                    "match": "[=+\\-*/%:=.<>!]"
+                    "match": "[=+\\-*/%:=.,<>!;]"
                 }
             ]
         },
-        "functions": {
-            "begin": "\\bdef\\s+\\w+\\s*\\(",
-            "end": "\\)\\s*\\{",
+        "controlStatements": {
             "patterns": [
                 {
-                    "include": "#param-list"
+                    "name": "keyword.control.coda",
+                    "match": "\\b(for|while|if|elif|else|break|return|do|continue)\\b"
                 }
             ]
         },
-        "scopes": {
+        "scopesAndFunctions": {
             "patterns": [
                 {
-                    "name": "keyword.control.scope.coda",
-                    "match": "\\bscope\\b"
+                    "name": "entity.name.function.coda",
+                    "match": "\\bdef\\s+\\w+\\s*\\([^)]*\\)\\s*\\{",
+                    "captures": {
+                        "0": {
+                            "name": "entity.name.function.coda"
+                        },
+                        "1": {
+                            "name": "entity.name.variable.parameter.coda"
+                        }
+                    }
                 },
                 {
-                    "include": "#variables"
-                },
-                {
-                    "include": "#functions"
+                    "name": "entity.name.scope.coda",
+                    "match": "\\bscope\\s+\\w+\\s*\\{",
+                    "captures": {
+                        "0": {
+                            "name": "entity.name.scope.coda"
+                        }
+                    }
                 }
             ]
-        },
-        "objects": {
-            "patterns": [
-                {
-                    "name": "variable.other.object.coda",
-                    "match": "\\blet\\s+[a-zA-Z_][a-zA-Z0-9_]*\\s+=\\s+\\{"
-                },
-                {
-                    "include": "#functions"
-                }
-            ]
-        },
-        "lists": {
-            "patterns": [
-                {
-                    "name": "constant.language.list.coda",
-                    "match": "\\bconst\\s+[a-zA-Z_][a-zA-Z0-9_]*\\s+=\\s+\\[.*?\\];"
-                }
-            ]
-        },
-        "param-list": {
-            "name": "variable.parameter.coda",
-            "match": "\\b\\w+(?=\\s*(,|\\)))\\b"
         }
-    },
-    "scopeName": "source.coda"
+    }
 }

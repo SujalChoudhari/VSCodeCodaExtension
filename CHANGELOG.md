@@ -4,6 +4,13 @@ All notable changes to the "coda-language-support" extension will be documented 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [0.2.0] - 20-09-2023
+### Changed
+- `syntaxes` optimised.
+## [0.1.0] - 20-09-2023
+### Added 
+- `file-icon` and `extention-icon` 
 
-- Initial release
+## [0.0.1] - 19-09-2023
+### Added
+- syntax highlighting 
