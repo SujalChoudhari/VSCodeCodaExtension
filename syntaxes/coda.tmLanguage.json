@@ -55,7 +55,7 @@
             "patterns": [
                 {
                     "name": "entity.name.method",
-                    "match": "\\w+(\\.\\w+)+"
+                    "match": "[a-zA-Z]\\w*(\\.\\w+)+"
                 }
             ]
         },
@@ -92,7 +92,7 @@
             "patterns": [
                 {
                     "name": "constant.numeric.coda",
-                    "match": "\\b\\d+\\b"
+                    "match": "\\b\\d+([_iIfFdDlLbB.]?)?\\b"
                 }
             ]
         },

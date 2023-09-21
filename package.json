@@ -12,15 +12,19 @@
     "sujal",
     "coda extention"
   ],
-  "version": "0.3.0",
+  "version": "0.3.1",
   "engines": {
     "vscode": "^1.82.0"
   },
   "categories": [
     "Programming Languages",
-    "Snippets"
+    "Snippets",
+    "Formatters"
   ],
   "contributes": {
+    "configurationDefaults": {
+      "json.format.enable": true
+    },
     "languages": [
       {
         "id": "coda",
@@ -53,7 +57,7 @@
     ]
   },
   "repository": {
-    "url": "https://github.com/SujalChoudhari/VSCodeCodaExtention",
+    "url": "https://github.com/SujalChoudhari/VSCodeCodaExtension",
     "type": "github"
   }
 }
